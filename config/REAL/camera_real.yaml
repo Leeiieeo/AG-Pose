@@ -1,0 +1,80 @@
+setting: supervised
+
+train_dataset:
+  dataset_name: camera_real
+  dataset_dir: ./data
+  num_mini_batch_per_epoch: 4000
+  image_size: 224       # [192, 224]
+  sample_num: 1024
+  outlier_th: 0.1
+  syn_bs: 30
+  real_bs: 10
+  syn_num_workers: 12
+  real_num_workers: 4
+  shuffle: True
+  drop_last: True
+  pin_memory: True
+
+test_dataset:
+  img_size: 224         # [192, 224]
+  sample_num: 1024
+  dataset_dir: ./data
+  dataset_name: real
+
+pose_net:
+  rgb_backbone: dino    # [resnet, dino]
+  cat_num: 6
+  IAKD:
+    kpt_num: 96
+    query_dim: 256
+    AttnLayer:
+      block_num: 4
+      d_model: 256
+      dim_ffn: 256
+      num_head: 4
+  GAFA:
+    block_num: 2
+    K: [16, 32]
+    d_model: 256
+  NOCS_Predictor:
+    cat_num: 6
+    bins_num: 64
+    AttnLayer:
+      block_num: 2
+      d_model: 256
+      dim_ffn: 256
+      num_head: 4
+  Reconstructor:
+    pts_per_kpt: 10
+    ndim: 256
+  
+optimizer:
+  name: Adam
+  lr: 0.01
+  weight_decay: 0
+
+lr_scheduler:
+  name: CyclicLR
+  mode: triangular
+  base_lr: 0.00002
+  max_lr: 0.0005
+  step_size_up: 20000
+  step_size_down: 20000
+  cycle_momentum: False
+
+max_epoch : 30
+
+loss:
+  cd: 2.0
+  nocs: 2.0
+  recon: 15.0
+  delta: 1.0
+  diversity: 10.0
+  pose: 0.3
+  th: 0.01
+  obj_aware: True
+
+rd_seed: 1
+
+per_val: 10  # do the evaluation per per_val epochs 
+per_write: 50  # write down the info per per_write iterations
