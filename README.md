@@ -113,6 +113,11 @@ You can download our training logs, detailed metrics for each category and check
 |---|---|---|---|---|---|---|---|
 | resnet_backbone | 82.4 | 66.0 | 40.5 | 11.5 | 12.6 | 37.4 | 42.5 |
 | dino_backbone | 88.1 | 76.9 | 53.0 | 21.3 | 22.1 | 51.3 | 54.3 |
+## Visualization
+For visualization, please run
+```
+python visualize.py --config config/REAL/camera_real.yaml --test_epoch 30
+```
 
 ## Acknowledgements
 Our implementation leverages the code from these works:
