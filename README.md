@@ -124,6 +124,7 @@ Our implementation leverages the code from these works:
 - [NOCS](https://github.com/hughw19/NOCS_CVPR2019)
 - [DualPoseNet](https://github.com/Gorilla-Lab-SCUT/DualPoseNet)
 - [DPDN](https://github.com/JiehongLin/Self-DPDN)
+- [VI-Net](https://github.com/JiehongLin/VI-Net)
 - [HouseCat6D Toolbox](https://github.com/Junggy/HouseCat6D)
 
 We appreciate their generous sharing.
