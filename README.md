@@ -13,10 +13,11 @@ We will soon release a preprint about the extended paper where you can find more
 
 ## Citation
 ```
-@article{lin2024instance,
-  title={Instance-Adaptive and Geometric-Aware Keypoint Learning for Category-Level 6D Object Pose Estimation},
+@inproceedings{lin2024instance,
+  title={Instance-adaptive and geometric-aware keypoint learning for category-level 6d object pose estimation},
   author={Lin, Xiao and Yang, Wenfei and Gao, Yuan and Zhang, Tianzhu},
-  journal={arXiv preprint arXiv:2403.19527},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={21040--21049},
   year={2024}
 }
 ```
@@ -93,21 +94,21 @@ python test_housecat6d.py --config config/HouseCat6D/housecat6d.yaml --test_epoc
 ```
 ## Results
 You can download our training logs, detailed metrics for each category and checkpoints [here](http://home.ustc.edu.cn/~llinxiao/log.zip).
-### REAL275 test set:
+### REAL275 testset:
 
 |   | IoU25 | IoU50 | IoU75 | 5 degree 2 cm | 5 degree 5 cm | 10 degree 2 cm | 10 degree 5 cm |
 |---|---|---|---|---|---|---|---|
 | resnet_backbone | 84.3 | 83.8 | 77.6 | 56.2 | 62.3 | 73.4 | 81.2 |
 | dino_backbone | 84.3 | 84.1 | 80.1 | 57.0 | 64.6 | 75.1 | 84.7 |
 
-### CAMERA25 test set:
+### CAMERA25 testset:
 
 |   | IoU25 | IoU50 | IoU75 | 5 degree 2 cm | 5 degree 5 cm | 10 degree 2 cm | 10 degree 5 cm |
 |---|---|---|---|---|---|---|---|
 | resnet_backbone | 94.7 | 94.1 | 91.7 | 77.1 | 82.0 | 85.5 | 91.6 |
 | dino_backbone | 94.7 | 94.2 | 92.5 | 79.5 | 83.7 | 87.1 | 92.6 |
 
-### HouseCat6D test set:
+### HouseCat6D testset:
 
 |   | IoU25 | IoU50 | IoU75 | 5 degree 2 cm | 5 degree 5 cm | 10 degree 2 cm | 10 degree 5 cm |
 |---|---|---|---|---|---|---|---|
