@@ -40,7 +40,7 @@ python setup.py install
 ## Data Processing
 ### NOCS dataset
 - Download and preprocess the dataset following [DPDN](https://github.com/JiehongLin/Self-DPDN)
-- Download and unzip the segmentation results [here](http://home.ustc.edu.cn/~llinxiao/segmentation_results.zip)
+- Download and unzip the segmentation results [here](https://drive.usercontent.google.com/download?id=1RwAbFWw2ITX9mXzLUEBjPy_g-MNdyHET&export=download&authuser=0) from DualPoseNet
 
 Put them under ```PROJ_DIR/data```and the final file structure is as follows:
 ```
